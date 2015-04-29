@@ -1,0 +1,25 @@
+<!doctype html>
+<!----
+	Book:	AngularJS
+	Page:	P2
+	Active: Hello World! input model test
+-->
+<html ng-app>
+    <head>
+        <script src="angular.js"></script>
+        <script>
+			function HelloController($scope, $http){
+                $http.get("http://54.191.226.150/").success(function(data){
+                    $scope.greeting = data;
+                });
+			}		
+		</script>
+    </head>
+    <body>
+    	<div ng-controller='HelloController'>
+    		<input ng-model='greeting.text'>
+    		<p>{{greeting}}, World</p>
+    	</div>
+    </body>
+</html>
+

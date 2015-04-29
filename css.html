@@ -1,0 +1,49 @@
+<!doctype html>
+<!----
+	Book:	AngularJS
+	Page:	P25
+	Active: CSS controlling.
+-->
+
+<html ng-app>
+    <head>
+        <script src="angular.js"></script>
+		<style>
+		.error {
+			background-color: red;
+		}
+		.warning {
+			background-color: yellow;
+		}
+		.selected {
+			background-color: lightgreen;
+		}
+		</style>
+        <script>
+		function HeaderController($scope) {
+			$scope.isError = false;
+			$scope.isWarning = false;
+		$scope.showError = function() {
+			$scope.messageText = 'This is an error!';
+			$scope.isError = true;
+			$scope.isWarning = false;
+		};
+		$scope.showWarning = function() {
+			$scope.messageText = 'Just a warning. Please carry on.';
+			$scope.isWarning = true;
+			$scope.isError = false;
+		};
+		}
+		</script>
+    </head>
+    <body>
+    	<div ng-controller='HeaderController' ng-class='{selected: true}'>
+		...
+		<div ng-class='{error: isError, warning: isWarning}'>{{messageText}}</div>
+			...
+			<button ng-click='showError()'>Simulate Error</button>
+			<button ng-click='showWarning()'>Simulate Warning</button>
+		</div>
+    </body>
+</html>
+

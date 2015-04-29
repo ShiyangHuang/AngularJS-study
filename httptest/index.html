@@ -1,0 +1,13 @@
+<html ng-app="weatherForcast">
+    <head>
+        <script src="angular.js"></script>
+        <script src="controllers.js"></script>
+    </head>
+    <body>
+    	<div ng-controller='weatherController'>
+            {{text}}
+            {{products}}
+    		<p>{{ products[0].name }}, World</p>
+    	</div>
+    </body>
+</html>

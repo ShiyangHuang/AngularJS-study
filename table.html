@@ -1,0 +1,31 @@
+<!doctype html>
+<!----
+	Book:	AngularJS
+	Page:	P22
+	Active: Another demo for listview
+-->
+
+<html ng-app>
+    <head>
+        <script src="angular.js"></script>
+        <script>
+		var album = [
+			{name:'Southwest Serenade', duration: '2:34'},
+			{name:'Northern Light Waltz', duration: '3:21'},
+			{name:'Eastern Tango', duration: '17:45'}];
+		function AlbumController($scope) {
+			$scope.album = album;
+		}
+		</script>
+    </head>
+    <body>
+    	<table ng-controller='AlbumController'>
+			<tr ng-repeat='track in album'>
+				<td>{{$index + 1}}</td>
+				<td>{{track.name}}</td>
+				<td>{{track.duration}}</td>
+			</tr>
+		</table>
+    </body>
+</html>
+

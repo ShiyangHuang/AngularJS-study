@@ -1,0 +1,23 @@
+<!doctype html>
+<!----
+	Book:	AngularJS
+	Page:	P2
+	Active: Hello World! input model test
+-->
+<html ng-app>
+    <head>
+        <script src="angular.js"></script>
+        <script>
+			function HelloController($scope){
+				$scope.greeting = {text:'Hello'};
+			}		
+		</script>
+    </head>
+    <body>
+    	<div ng-controller='HelloController'>
+    		<input ng-model='greeting.text'>
+    		<p>{{greeting.text}}, World</p>
+    	</div>
+    </body>
+</html>
+

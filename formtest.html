@@ -1,0 +1,34 @@
+<!doctype html>
+<!----
+	Book:	AngularJS
+	Page:	P16
+	Active: Button function & form test
+-->
+
+<html ng-app>
+    <head>
+        <script src="angular.js"></script>
+        <script>
+		function StartUpController($scope) {
+			$scope.computeNeeded = function() {
+				$scope.needed = $scope.startingEstimate * 10;
+			};
+			$scope.requestFunding = function() {
+				window.alert("Sorry, please get more customers first.");
+			};
+			$scope.reset = function() {
+				$scope.startingEstimate = $scope.needed = 0;
+			};
+		}
+		</script>
+    </head>
+    <body>
+    	<form ng-submit="requestFunding()" ng-controller="StartUpController">
+			Starting: <input ng-change="computeNeeded()" ng-model="startingEstimate">
+			Recommendation: {{needed}}
+			<button>Fund my startup!</button>
+			<button ng-click="reset()">Reset</button>
+		</form>
+    </body>
+</html>
+
